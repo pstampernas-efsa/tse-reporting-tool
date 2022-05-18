@@ -20,6 +20,8 @@ import xlsx_reader.TableSchema;
 import xml_catalog_reader.Selection;
 
 public class ReportListDialog extends TableDialog {
+	
+	private static final Logger LOGGER = LogManager.getLogger(ReportListDialog.class);
 
 	private RestoreableWindow window;
 	private static final String WINDOW_CODE = "ReportList";

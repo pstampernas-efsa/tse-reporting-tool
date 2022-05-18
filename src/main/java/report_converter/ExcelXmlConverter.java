@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
 import java.io.*;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -166,7 +167,7 @@ public class ExcelXmlConverter {
 				return new File(xmlPath);
 			}
 		}
-
+		LOGGER.info("File was not found in ExcelXmlConverter.", excelFile);
 		return null;
 	}
 	/*
