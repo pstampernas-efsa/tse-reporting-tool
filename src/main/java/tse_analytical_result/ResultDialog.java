@@ -241,6 +241,7 @@ public class ResultDialog extends TableDialogWithMenu {
 			try {
 				candidateMax = Integer.valueOf(seq);
 			} catch (NumberFormatException e) {
+				LOGGER.error("Trying to parse new row but could not get integer value from seq ", e);
 				e.printStackTrace();
 				candidateMax = 0;
 			}

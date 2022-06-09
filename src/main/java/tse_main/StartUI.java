@@ -230,7 +230,8 @@ public class StartUI {
 			return db;
 		} catch (DatabaseVersionException e) {
 
-			LOGGER.warn("Old version of the database found", e);
+			LOGGER.error("Old version of the database found", e);
+			e.printStackTrace();
 
 			int val = ask(TSEMessages.get("db.need.removal"));
 
@@ -249,7 +250,9 @@ public class StartUI {
 				db.connect();
 
 			} catch (IOException e1) {
-				LOGGER.fatal(e1);
+				LOGGER.fatal("Unable to delete database", e1);
+				e1.printStackTrace();
+				
 				showInitError(TSEMessages.get("db.removal.error"));
 
 				return db;
