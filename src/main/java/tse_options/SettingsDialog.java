@@ -187,7 +187,7 @@ public class SettingsDialog extends OptionsDialog {
 		
 		if (!mandatoryFilled) {
 			
-			LOGGER.error("Cannot perform test connection. Credentials missing.");
+			LOGGER.error("Cannot perform test connection. Credentials may be missing.");
 			
 			Warnings.warnUser(getDialog(), 
 					TSEMessages.get("error.title"), 
