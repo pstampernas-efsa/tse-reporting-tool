@@ -60,7 +60,7 @@ public class TseReportValidator extends ReportValidator {
 
 	@Override
 	public Collection<ReportError> validate() {
-
+		
 		Collection<ReportError> errors = new ArrayList<>();
 
 		ArrayList<TableRow> reportRecords = this.reportService.getAllRecords(report);
@@ -75,6 +75,7 @@ public class TseReportValidator extends ReportValidator {
 			try {
 				errors.addAll(checkMandatoryFields(row));
 			} catch (FormulaException e) {
+				LOGGER.error("Error occurred", e);
 				e.printStackTrace();
 			}
 
